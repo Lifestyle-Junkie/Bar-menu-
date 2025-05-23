@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Tipsy Haven - Bar & Lounge</title>
+  <style>
+    /* Reset & basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #fff;
+      overflow: hidden; /* Prevents scrollbars */
+    }
+
+    /* Full-screen video background */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Hero container for content */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Logo at top center */
+    .logo {
+      position: absolute;
+      top: 40px; /* Increased from 20px to move logo down */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .logo img {
+      max-width: 150px; /* Smaller default for better mobile fit */
+      height: auto;
+      filter: brightness(0) invert(1); /* Makes logo white */
+    }
+
+    /* Centered main copy */
+    .copy {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+      z-index: 1;
+      width: 90%; /* Prevents text overflow on small screens */
+    }
+    .copy .pre { 
+      font-size: 16px; 
+      letter-spacing: 3px; 
+      margin-bottom: 8px;
+    }
+    .copy .main {
+      font-size: 80px; /* Reduced default for better scaling */
+      letter-spacing: 6px;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+    .copy .hours {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      flex-wrap: wrap; /* Allows wrapping on very small screens */
+      justify-content: center;
+    }
+    .copy .hours span {
+      margin: 5px 10px;
+      padding: 5px 12px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+    }
+
+    /* Footer with address + contact */
+    .footer {
+      position: absolute;
+      bottom: 20px; /* Reduced for mobile */
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      line-height: 1.4;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+      z-index: 1;
+    }
+    .footer .address {
+      max-width: 50%;
+    }
+    .footer .contact {
+      text-align: right;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .logo {
+        top: 30px; /* Adjusted from 15px to match increased default */
+      }
+      .logo img {
+        max-width: 120px; /* Even smaller for tablets/phones */
+      }
+      .copy .main {
+        font-size: 40px; /* Further reduced for smaller screens */
+        letter-spacing: 4px;
+      }
+      .copy .pre {
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+      .copy .hours {
+        font-size: 11px;
+      }
+      .copy .hours span {
+        padding: 4px 10px;
+        margin: 3px 8px;
+      }
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+      }
+      .footer .address, .footer .contact {
+        max-width: 100%;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+    }
+
+    /* Extra small screens (e.g., older phones below 480px) */
+    @media (max-width: 480px) {
+      .logo {
+        top: 20px; /* Adjusted from 10px to match increased default */
+      }
+      .logo img {
+        max-width: 100px; /* Smallest size for tiny screens */
+      }
+      .copy .main {
+        font-size: 30px; /* Smallest for readability */
+        letter-spacing: 3px;
+      }
+      .copy .pre {
+        font-size: 10px;
+      }
+      .copy .hours {
+        font-size: 10px;
+      }
+      .footer {
+        font-size: 10px;
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted playsinline>
+    <source src="bar-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero">
+    <div class="logo">
+      <img src="hampton_logo2.png" alt="Hampton Logo">
+    </div>
+
+    <div class="copy">
+      <div class="pre">WE'RE OPEN FOR</div>
+      <div class="main">LUNCH</div>
+      <div class="hours">
+        <div>MON</div>
+        <span>11 AM – 02 PM</span>
+        <div>SUN</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="address">
+        L23, CENTEC Tower<br>
+        Nguyen Thi Minh Khai Street<br>
+        District 3, Ho Chi Minh City
+      </div>
+      <div class="contact">
+        1900 636 597
+      </div>
+    </div>
+  </div>
+</body>
+</html>
